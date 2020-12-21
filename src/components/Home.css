@@ -1,0 +1,18 @@
+.home-grid {
+  display: grid;
+  grid-template-columns: 10fr 1fr 10fr;
+  height: 80vh;
+  width: 100%;
+  /* align-items: center; */
+  margin-top: 16px
+}
+.home-grid > div {
+
+}
+.middleBar {
+  height: 80vh;
+  width: 1px;
+  background-color: #5C5F58;
+  align-self: center;
+  justify-self: center;
+}
