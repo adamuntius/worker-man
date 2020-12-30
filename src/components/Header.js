@@ -1,6 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import HeaderItem from './HeaderItem'
+import Home from './Home'
+import Market from './Market'
+import Portfolio from './Portfolio'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,15 +26,35 @@ class Header extends React.Component {
   }
   render () {
     return (
-      <div>
-        <div style={headerstyle}>
-          <div style={headergrid}>
-            <div onClick = {() => this.handleClick(0)}><HeaderItem activeHeader={this.state.activeHeaderItem} name={"Market"}/></div>
-            <div onClick = {() => this.handleClick(1)}><HeaderItem activeHeader={this.state.activeHeaderItem} name={"Home"}/></div>
-            <div onClick = {() => this.handleClick(2)}><HeaderItem activeHeader={this.state.activeHeaderItem} name={"My Portfolio"} /></div>
-          </div>
-        </div>
+    <Router>
+      <div style={headerstyle}>
+        <nav>
+          <ul style={headergrid}>
+            <li onClick = {() => this.handleClick(0)}><HeaderItem activeHeader={this.state.activeHeaderItem} name={"Market"}/>
+              <Link to="/Market"></Link>
+            </li>
+            <li onClick = {() => this.handleClick(1)}><HeaderItem activeHeader={this.state.activeHeaderItem} name={"Home"}/>
+              <Link to="/Home"></Link>
+            </li>
+            <li onClick = {() => this.handleClick(2)}><HeaderItem activeHeader={this.state.activeHeaderItem} name={"My Portfolio"} />
+              <Link to="/Portfolio"></Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/Market">
+            <Market />
+          </Route>
+          <Route path="/Home">
+            <Home />
+          </Route>
+          <Route path="/Portfolio">
+            <Portfolio />
+          </Route>
+        </Switch>
       </div>
+    </Router>
     )
   }
 }
@@ -44,6 +73,8 @@ const headergrid = {
   fontSize: "24px",
   color: "white",
   textAlign: "center",
+  height: "12vh",
+  listStyleType: "none"
 }
 
 const headerstyle = {

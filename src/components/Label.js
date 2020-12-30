@@ -8,10 +8,14 @@ class Label extends React.Component {
       length: 0
     }
   }
-  getUnderbarWidth() {
-    var fieldLength = this.props.field.length;
-    var valueLength = this.props.value.toString.length;
+  getUnderbarWidth(props) {
+    if (this.props.length) {
+      return this.props.length * 12;
+    }
+    var fieldLength = this.props.field.toString().length;
+    var valueLength = this.props.value.toString().length;
     var totalLength = fieldLength + valueLength;
+    console.log(this.props.value + this.props.totalLength);
     return totalLength * 12;
   }
   render () {
