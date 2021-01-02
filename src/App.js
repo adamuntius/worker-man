@@ -10,9 +10,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 class App extends Component {
-  state = {
-    title: "Work Slider"
-  }
   formatMoney(number) {
     number = parseFloat(number);
     number = number.toFixed(2);

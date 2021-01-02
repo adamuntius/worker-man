@@ -23,7 +23,7 @@ class HeaderItem extends React.Component {
       )
     }
     return (
-      <div onClick={this.handleClick}>
+      <div style={headerchild} onClick={this.handleClick}>
         <div>{this.props.name}</div>
       </div>
     )
@@ -35,7 +35,8 @@ const headerchild = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    margin: "auto"
 }
 
 

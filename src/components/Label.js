@@ -15,7 +15,6 @@ class Label extends React.Component {
     var fieldLength = this.props.field.toString().length;
     var valueLength = this.props.value.toString().length;
     var totalLength = fieldLength + valueLength;
-    console.log(this.props.value + this.props.totalLength);
     return totalLength * 12;
   }
   render () {

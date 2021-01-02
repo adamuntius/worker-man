@@ -7,6 +7,7 @@ import Sliders from './Sliders.js'
 import SmallLabel from './SmallLabel.js'
 import SmallButton from './SmallButton.js'
 
+
 class Home extends React.Component {
   state = {
     cash: 100000,
@@ -148,6 +149,15 @@ class Home extends React.Component {
       cashPerIncrement: this.state.cashPerIncrement * 1.05})
 
     }
+  }
+  componentDidMount() {
+    this.setState(this.props.headerState);
+    console.log("mounted");
+    console.log(this.state);
+  }
+  componentWillUnmount() {
+    this.props.adjustState(this.state);
+    console.log("unmounted");
   }
   render () {
     return (
