@@ -25,14 +25,15 @@ class Label extends React.Component {
       padding: "10px",
       borderRadius: "12px",
       margin: "8px auto",
-      maxWidth: "240px",
+      maxWidth: "240px"
     }
     const underbarstyle = {
       backgroundColor: "#B73225",
       color: "white",
       width: this.getUnderbarWidth(),
       height: "1px",
-      marginTop: "-10px"
+      marginTop: "-10px",
+      marginBottom: "10px"
     }
     const flexstyle = {
       display: "flex",

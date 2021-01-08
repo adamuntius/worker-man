@@ -10,6 +10,7 @@ class HeaderItem extends React.Component {
       active: false
     }
   }
+  
   render () {
     var isActive = (this.props.name == this.props.activeHeader);
 
